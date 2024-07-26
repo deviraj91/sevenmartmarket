@@ -27,12 +27,11 @@ public void verifyManagerproduct()
 	manageproductpage=new ManageProductPage(driver);
 	manageproductpage.clickOnManageproduct();
 	manageproductpage.getTextOfListproducts();
-	String actualname="Devi";
-	String expectedname="Devi";
 	
 	
 	
-	Assert.assertEquals(actualname, expectedname);
+	
+	
 	
 	manageproductpage.getFullrow();
 	manageproductpage.ClickonButton();
