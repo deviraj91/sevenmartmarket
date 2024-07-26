@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Sanity Pack">
+
+<listeners>
+		<listener class-name="com.sevenmartmarket.listeners.ExtentReporter"></listener>
+	</listeners>
+
+	<test name="login">
+		<classes>
+			<class name="com.sevenmartmarket.tests.LoginTest">
+			</class>
+			
+						
+		</classes>
+	</test>
+	
+	<test name="login1">
+		<classes>
+			<class name="com.sevenmartmarket.tests.AdminUser_PageTest">
+			</class>
+			
+						
+		</classes>
+	</test>
+	
+	<test name="login2">
+		<classes>
+			<class name="com.sevenmartmarket.tests.ManageProductTest">
+			</class>
+			
+						
+		</classes>
+	</test>
+	
+</suite>

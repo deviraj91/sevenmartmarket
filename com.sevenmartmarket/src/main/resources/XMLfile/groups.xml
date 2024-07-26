@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="group execution">
+
+<listeners>
+		<listener class-name="com.sevenmartmarket.listeners.ExtentReporter"></listener>
+	</listeners>
+
+	<test name="executing smoke">
+	<groups>  
+      <run>  
+         <include name="smoke"></include>  
+      </run>  
+   </groups>
+		<classes>
+			<class name="com.sevenmartmarket.tests.LoginTest">
+			</class>
+			
+			<class name="com.sevenmartmarket.tests.AdminUser_PageTest">
+			</class>
+			<class name="com.sevenmartmarket.tests.ManageProductTest">
+			</class>			
+		</classes>
+	</test>
+	
+	
+	
+</suite>

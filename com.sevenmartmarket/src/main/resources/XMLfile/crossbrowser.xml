@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="CrossBrowser Execution" >
+
+	<listeners>
+		<listener
+			class-name="com.sevenmartmarket.listeners.ExtentReporter"></listener>
+	</listeners>
+
+	<test name="execute in chrome">
+		<parameter name="browser" value="chrome" />
+
+		<classes>
+			<class name="com.sevenmartmarket.tests.LoginTest">
+			</class>
+
+
+		</classes>
+	</test>
+
+	<test name="execute in firefox">
+		<parameter name="browser" value="Firefox" />
+		<classes>
+			<class name="com.sevenmartmarket.tests.LoginTest">
+			</class>
+		</classes>
+	</test>
+	<test name="execute in edge">
+		<parameter name="browser" value="edge" />
+		<classes>
+			<class name="com.sevenmartmarket.tests.LoginTest">
+			</class>
+
+
+		</classes>
+	</test>
+
+</suite>
+
