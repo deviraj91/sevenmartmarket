@@ -7,6 +7,7 @@ public class RetryAnalyzer implements IRetryAnalyzer{
 	//this helps to rerun the tests again 
 	int counter = 0;
 	int retryLimit = 3;
+@Override
 	public boolean retry(ITestResult result) {
 		if(counter<retryLimit) {
 			counter++;

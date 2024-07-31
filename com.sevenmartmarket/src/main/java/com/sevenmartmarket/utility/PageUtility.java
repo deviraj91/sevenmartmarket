@@ -53,5 +53,6 @@ public void js_Scrollandclick(WebElement element)
 		x=x+2;
 	}
 }
+
 //write for  actions class
 }

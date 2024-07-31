@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import com.sevenmartmarket.constants.Constants;
+import com.sevenmartmarket.utility.GeneralUtility;
 import com.sevenmartmarket.utility.PageUtility;
 
 public class AdminPage {
@@ -49,7 +50,22 @@ public class AdminPage {
 
 	@FindBy(xpath = "//i[@class='icon fas fa-check']")
 	private WebElement successtick;
+	
+	@FindBy(xpath="//div[@class='col-sm-12']//a[2]")
+	private WebElement searchbutton;
+	
+	@FindBy(xpath="//input[@class='form-control']")
+	private WebElement searchUsername;
+	
+	@FindBy(xpath="//select[@name='ut']")
+	private WebElement searchUsertype;
 
+	@FindBy(xpath="//button[@name='Search']")
+	private WebElement FindSearch;
+	
+	@FindBy(xpath="//table/tbody/tr[1]/td[1]")
+	private WebElement SearchOutput;
+	
 	public AdminPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -86,39 +102,37 @@ public class AdminPage {
 	public void click_Usertype(String UserType) {
 		pageutility = new PageUtility(driver);
 		pageutility.select_Byvisibletext(userTypedropdown, UserType);
-		 //userTypedropdown.click();
-		// select_usertype.click();
 	}
 
 	public void clickOnuserCreate() {
 		savebutton.click();
 	}
-
-	public String getAlertOfUserCreation() {
-		return successalert.getText();
-	}
-
-	public void enterUserCreateDetails(String newadminuser, String newadminpass, String UserType) {
+    public void userDetailsAndSave(String newadminuser, String newadminpass, String UserType) {
+		
 		enterUsername(newadminuser);
 		enterPassword(newadminpass);
 		click_Usertype(UserType);
-	}
-
-	public void enterdetails() {
-		enterUsername("devirraj");
-		enterPassword("devi***2019");
-		// click_Usertype();
 		savebutton.click();
 	}
-
-	public void admincreate() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		boolean tick = js.executeScript("arguments[0].isDisplayed;", successtick) != null;
-
-		// js.executeScript("arguments[0].gettext;",successtick);
-
-		Assert.assertFalse(false, "user created");
-
+	
+	public String userCreatedAlert()
+	{
+		String successAlertmsg=successalert.getText();
+		//System.out.println(successAlertmsg);
+		return successAlertmsg;
+	}
+	
+	public void Searchfuction (String searchUser,String Usertype) {
+		pageutility = new PageUtility(driver);
+		searchbutton.click();	
+		searchUsername.sendKeys(searchUser);
+		pageutility.select_Byvisibletext(searchUsertype, Usertype);
+		FindSearch.click();
+		
+	}
+	public String verifySearchFunction()
+	{
+		return SearchOutput.getText();
 	}
 
 }

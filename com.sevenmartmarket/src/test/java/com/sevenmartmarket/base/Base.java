@@ -79,7 +79,7 @@ public void launchBrowser()
 	@BeforeMethod(enabled=false)
 	public void launchBrowser(String browser)
 	{
-			//String browser=properties.getProperty("browser");//to read from properties file
+			
 	        String url=properties.getProperty("url");
 	        intialize(browser,url);
 	}
