@@ -37,11 +37,7 @@ public class AdminPage {
 
 	@FindBy(xpath = "//select[@id='user_type']")
 	private WebElement userTypedropdown;
-	/*
-	 * @FindBy(
-	 * xpath="//select[@id='user_type']//option[@value='admin' and contains(text(),'Admin')]"
-	 * ) private WebElement select_usertype;
-	 */
+	
 	@FindBy(xpath = "//button[@type='submit']//i[@class='fa fa-save']")
 	private WebElement savebutton;
 
@@ -118,7 +114,6 @@ public class AdminPage {
 	public String userCreatedAlert()
 	{
 		String successAlertmsg=successalert.getText();
-		//System.out.println(successAlertmsg);
 		return successAlertmsg;
 	}
 	

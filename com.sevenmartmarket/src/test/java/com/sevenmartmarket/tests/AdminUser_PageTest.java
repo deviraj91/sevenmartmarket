@@ -106,7 +106,6 @@ public class AdminUser_PageTest extends Base {
 		loginpage = new LoginPage(driver);
 		homepage = new HomePage(driver);
 		adminpage = new AdminPage(driver);
-
 		loginpage.Login();
 		adminpage.adminclick();
 		adminpage.clickonNewButton();

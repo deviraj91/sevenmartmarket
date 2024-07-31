@@ -22,7 +22,6 @@ public class HomePage {
 
 	@FindBy(xpath = "//a[@class='nav-link']//i[@class='nav-icon fas fa-edit']")
 	private WebElement ManageContentMenu;
-
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']")
 	private WebElement ManageNewsMenu;
 

@@ -105,8 +105,7 @@ public class ManageProductPage {
 		pageutility = new PageUtility(driver);
 		pageutility.js_Scrollandclick(stockavailabilityvalue);
 		stockavailabilityvalue.sendKeys(stock);
-		//pageutility.js_Scrollandclick(checkboxUnlimted);
-		 descriptionbox.sendKeys("description entered");
+		descriptionbox.sendKeys("description entered");
 	}
 	public void uploadFile() {
 		//String fileToUpload= System.getProperty("user.dir")+"\\Keshava Prabha Microfin Loan Card CAAG96923.pdf";
